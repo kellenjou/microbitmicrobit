@@ -14,14 +14,14 @@ radio.onReceivedMessage(RadioMessage.red, function () {
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
 })
 radio.onReceivedMessage(RadioMessage.left, function () {
-    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_Right, 200, 100)
+    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_SpinRight, 200, 200)
 })
 radio.onReceivedMessage(RadioMessage.right, function () {
-    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_Left, 100, 200)
+    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_SpinLeft, 200, 200)
 })
 let speed = 0
 speed = 200
-mbit_小车类.RGB_Car_Big(50, 190, 50)
+mbit_小车类.RGB_Car_Big(255, 255, 255)
 radio.setTransmitPower(7)
 radio.setFrequencyBand(83)
 basic.forever(function () {
