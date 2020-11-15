@@ -8,7 +8,7 @@ enum RadioMessage {
     red = 30290
 }
 radio.onReceivedMessage(RadioMessage.stirght, function () {
-    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_Back, 130, 100)
+    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_Back, 225, 175)
 })
 radio.onReceivedMessage(RadioMessage.red, function () {
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
@@ -33,8 +33,6 @@ basic.forever(function () {
             . # . . .
             . . # . .
             `)
-    } else {
-    	
     }
     if (input.buttonIsPressed(Button.B)) {
         radio.sendMessage(RadioMessage.right)
@@ -45,8 +43,6 @@ basic.forever(function () {
             . . . # .
             . . # . .
             `)
-    } else {
-    	
     }
     if (input.isGesture(Gesture.Shake)) {
         radio.sendMessage(RadioMessage.stirght)
@@ -57,12 +53,15 @@ basic.forever(function () {
             . . # . .
             . . # . .
             `)
-    } else {
-    	
     }
     if (input.isGesture(Gesture.ScreenDown)) {
         radio.sendMessage(RadioMessage.red)
-    } else {
-    	
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
     }
 })
