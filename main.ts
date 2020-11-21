@@ -8,7 +8,7 @@ enum RadioMessage {
     red = 30290
 }
 radio.onReceivedMessage(RadioMessage.stirght, function () {
-    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_Back, 225, 175)
+    mbit_小车类.CarCtrlSpeed2(mbit_小车类.CarState.Car_Back, 255, 0)
 })
 radio.onReceivedMessage(RadioMessage.red, function () {
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
@@ -23,6 +23,10 @@ let speed = 200
 mbit_小车类.RGB_Car_Big(255, 255, 255)
 radio.setTransmitPower(7)
 radio.setFrequencyBand(83)
+for (let index = 0; index < 100; index++) {
+    basic.showIcon(IconNames.Happy)
+    basic.pause(300)
+}
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
         radio.sendMessage(RadioMessage.left)
